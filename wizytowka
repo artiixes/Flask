@@ -1,0 +1,14 @@
+from flask import Flask
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+
+prefix = '/mypage/'
+@app.route(prefix + '/me/')
+def me_page():
+    return render_template('mypage.html')
+
+@app.route(prefix + '/contact')
+def contact_page():
+    return render_template('mypage_contact.html')
